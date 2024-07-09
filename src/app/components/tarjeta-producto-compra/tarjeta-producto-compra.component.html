@@ -1,0 +1,22 @@
+<div class="productoCompra">
+    <div class="productoCompraGrid">
+        <div
+            class="card-img-top"
+            style="
+                background-image: url({{producto.imagenUrl}}); 
+                background-size: contain; 
+                background-repeat: no-repeat; 
+                height: 240px; background-position: center;
+                box-sizing: border-box;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            "
+        ></div>
+        <div class="productoCompraContenido">
+            <h3 class="productoCompraNombre"> {{producto.titulo}} </h3>
+            <p class="productoCompraDescripcion"> {{producto.descripcion}} </p>
+            <p class="productoCompraNombre">{{producto.precio | currency: 'symbol': '$'}}</p>
+            <a role="button" (click)="eliminarCarrito(producto)" class="eliminarCompradoBtn">Eliminar</a>
+        </div>
+    </div>
+</div>

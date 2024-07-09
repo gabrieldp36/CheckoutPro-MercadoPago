@@ -1,0 +1,247 @@
+/************************************Globales************************************/
+
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;  
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+/************************************Scroll Bar************************************/
+
+.hide-scroll {
+    overflow: auto;
+}
+
+*::-webkit-scrollbar {
+    width: .9rem;
+    background: #c7c7c7;
+}
+  
+*::-webkit-scrollbar-track:hover {
+    background: #c1c5c9;
+}
+
+*::-webkit-scrollbar-track:active {
+    background: #c1c5c9;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #8b9096;
+    border: .3rem solid #8b9096;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background-color: #495057;
+    border-color: #495057;
+}
+
+/*************************************Utilidades**************************************/
+
+.opacity-hover-8:hover {
+    opacity: .8 !important;
+}
+
+/************************************Sweet Alert***************************************/
+
+.swal2-timer-progress-bar {
+    background-color: rgba(9,9,121,1) !important;
+}
+
+/************************************NavBar + Carrito***********************************/
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    color: white;
+    padding: 0 30px;
+    box-shadow: 15px 5px 5px #48529944;
+    background: rgb(0,212,255);
+    background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 35%, rgba(2,0,36,1) 100%);
+}
+
+.divBtnCarrito {
+    padding-right: 80px;
+}
+
+.divButton {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-start;
+}
+
+.btnCarrito {
+    width: 36px;
+    height: 36px;
+    background-image: url(./assets/btnCarrito.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 0;
+    color: transparent;
+    cursor: pointer;
+}
+
+.btnCarrito:hover {
+    transform: scale(1.3);
+    background-image: url(./assets/btnCarritoHoverGreen.svg);
+    transition-delay: 0.18s;
+    transition-duration: 0.2s;
+    margin-top: 10px;
+}
+
+.parrafoCarritoMT {
+    margin-top: 20px;
+}
+
+.divBtnComprar {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.divBtnRemove {
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 10px; 
+}
+
+.btnRemove {
+    height: 32px;
+    width: 32px;
+    background-image: url(assets/btnRemove.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 0;
+}
+
+.btnComprarCarrito {
+    width: 80% !important;
+    border-radius: 20px !important;
+}
+
+/************************************Listado productos************************************/
+
+.divTarjetas {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.paddingTarjetas {
+    padding-bottom: 35px;
+}
+
+.tarjeta {
+    height: 100%;
+    box-shadow: 5px 5px 5px #48529944;
+}
+
+.divImgCard {
+    padding: 0 10px;
+}
+
+.imgCard {
+    height: 120px; 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    border: none;
+    box-sizing: border-box;
+}
+
+.btnAgregarCarrito {
+    width: 100% !important;
+    border-radius: 20px !important;
+    margin-bottom: 8px;
+}
+
+.cuerpoTarjeta {
+   display: flex; 
+   flex-direction: column; 
+   justify-content: space-around;
+}
+
+/************************************Productos Compra************************************/
+
+.productoCompra {
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 5px 5px 5px #48529944;
+    border-radius: 1rem;
+    border: 1px solid #0000002d;
+}
+
+.productoCompraGrid {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.productoCompraContenido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.productoCompraNombre {
+    margin: 1rem 0;
+    color: #000;
+    font-size: 1.8rem;
+}
+
+.productoCompraDescripcion {
+    text-align: left;
+    font-size: 1rem;
+    color: #455a64;
+}
+
+.divBtnMercadoPago {
+    position: fixed;
+    width: 20rem;
+    right: 8%
+}
+
+.eliminarCompradoBtn {
+    text-decoration: none;
+    font-weight: 700;
+    color: #D92626;
+}
+
+.eliminarCompradoBtn:hover {
+    color: #D92626;
+    opacity: .8;
+}
+
+@media (max-width: 991px) {
+    .divBtnMercadoPago {
+        position: unset;
+        right: unset;
+        width: 100%;
+    }
+}

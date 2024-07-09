@@ -1,0 +1,34 @@
+<div class="container">
+
+    <div class="row divTarjetas animate__animated animate__fadeIn animate__slow">
+
+        <div class="col-lg-7 col-md-12 col-sm-12">
+            <div 
+                *ngFor="let producto of listadoProductos"
+            >
+                <app-tarjeta-producto-compra [producto]="producto"></app-tarjeta-producto-compra>
+            </div>
+        </div>
+
+        <div class="col-lg-5 col-md-12 col-sm-12">
+            <div class="divBtnMercadoPago">
+                <div class="card">
+                    <div class="card-body">
+                
+                        <h5 class="card-title" style="font-weight: 700; margin-bottom: 20px;">¡Comprar productos!</h5>
+                        <p class="card-text"><strong>Cantidad:</strong> {{listadoProductos.length}} </p>
+                        <p class="card-text"> <strong>Precio:</strong> {{carritoService.totalCarrito() | currency: 'symbol': '$'}}</p>
+                        <hr>
+                        
+                        <button 
+                            class="btn btn-outline-success btnAgregarCarrito btn-sm" 
+                        > 
+                            + Comprar 
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

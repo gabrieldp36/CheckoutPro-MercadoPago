@@ -1,0 +1,41 @@
+<div class="card tarjeta">
+    <div class="divImgCard">
+        <div
+            class="card-img-top"
+            style="background-image: url({{producto.imagenUrl}}); 
+            background-size: contain; 
+            background-repeat: no-repeat; 
+            height: 240px; background-position: center;
+            box-sizing: border-box;
+            margin-top: 10px;
+            margin-bottom: 10px;"
+        ></div>
+    </div>
+
+
+    <div class="card-body cuerpoTarjeta">
+
+        <h5 class="card-title" style="font-weight: 700; margin-bottom: 20px;">{{producto.titulo}}</h5>
+        <p class="card-text">{{producto.descripcion}}</p>
+        <p class="card-text"> <strong>Precio:</strong> {{producto.precio | currency: 'symbol': '$'}}</p>
+        <p class="card-text"><strong>Stock:</strong> {{producto.stock | number}}</p>
+        
+        <button 
+            class="btn btn-outline-success btnAgregarCarrito btn-sm" 
+            (click)="agregarCarrito()"
+            [disabled] = "producto.stock == 0"
+        > 
+            + Agregar al carrito 
+        </button>
+
+        <!-- <button
+            *ngIf="mostrarBtnEliminar(producto)"
+            class="btn btn-outline-danger btnAgregarCarrito btn-sm" 
+            (click)="eliminarCarrito(producto)"
+        > 
+            - Eliminar del carrito 
+        </button> -->
+
+    </div>
+
+</div>

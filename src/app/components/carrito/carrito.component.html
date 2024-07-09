@@ -1,0 +1,65 @@
+<div class="divBtnCarrito">
+    <div ngbDropdown display="dynamic" placement="bottom-end" #myDrop="ngbDropdown">
+
+        <div 
+            class="divButton"
+        >
+            <button 
+                class="btnCarrito" 
+                id="dropdownBasic1"
+                (mouseover)="ocultarAviso()"
+                (mouseleave)="mostrarAviso()"
+                ngbDropdownToggle
+            ></button>
+
+            <img 
+                *ngIf="productosCarrito.length > 0 && mostrarAvisoLleno"
+                src="../../../assets/Ellipse 6.svg" alt=""
+            >
+            
+        </div>
+
+        <div  
+            [class]="(productosCarrito.length == 0) ? 'ocultar' : ''"
+            ngbDropdownMenu 
+            aria-labelledby="dropdownBasic1"
+        >
+            
+            <div
+                *ngFor="let producto of productosCarrito"
+            >   
+                <div class="divBtnRemove">
+                    <button
+                        class="btnRemove opacity-hover-8"
+                        (click)="eliminarCarrito(producto)"
+                    ></button>
+                </div>
+
+                <div
+                    style="background-image: url({{producto.imagenUrl}});"
+                    class="imgCard"
+                ></div>
+
+                <p class="parrafoCarritoMT">{{producto.titulo}}</p>
+                <p>Precio: {{producto.precio | currency: 'symbol': '$'}}</p>
+                <hr>
+
+            </div>
+            
+            <div class="divBtnComprar">
+
+                <p><strong>Total: {{carritoService.totalCarrito() | currency: 'symbol': '$'}}</strong></p>
+
+                <button
+                    *ngIf="productosCarrito.length > 0"
+                    class="btn btn-outline-success btnComprarCarrito btn-sm" 
+                    (click)="comprarProductos(myDrop)"
+                > 
+                    Comprar carrito
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
