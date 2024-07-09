@@ -24,7 +24,7 @@ export class CarritoService {
     {
       id: 2,
       imagenUrl: "https://http2.mlstatic.com/D_NQ_NP_2X_733768-MLA45822475776_052021-F.webp",
-      titulo: "Vincent Bach Tr200 En Si-b",
+      titulo: "Vincent Bach Tr200 Si-b",
       descripcion: "Instrumento ideal para estudiantes principiantes.",
       precio: 500000,
       stock: 8

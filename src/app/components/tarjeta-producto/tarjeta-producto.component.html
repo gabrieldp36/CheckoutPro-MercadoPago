@@ -25,7 +25,10 @@
             (click)="agregarCarrito()"
             [disabled] = "producto.stock == 0"
         > 
-            + Agregar al carrito 
+            <span class="centrarIcon">
+                <span class="material-icons marginIcon">local_mall</span>
+                Agregar al carrito 
+            </span>
         </button>
 
         <!-- <button

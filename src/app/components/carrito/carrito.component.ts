@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 import { Producto } from 'src/app/interfaces/app.interfaces';
-import { CarritoService } from 'src/app/services/carrito-service';
+import { CarritoService } from 'src/app/services/carrito-service.service';
 
 @Component({
   selector: 'app-carrito',
@@ -24,6 +24,9 @@ export class CarritoComponent {
 
     this.carritoService.removerProducto(unProducto)
     unProducto.stock++;
+    if(this.productosCarrito.length === 0) {
+      this.router.navigate(['']);
+    };
   };
 
   public ocultarAviso(){

@@ -20,11 +20,9 @@
                         <p class="card-text"> <strong>Precio:</strong> {{carritoService.totalCarrito() | currency: 'symbol': '$'}}</p>
                         <hr>
                         
-                        <button 
-                            class="btn btn-outline-success btnAgregarCarrito btn-sm" 
-                        > 
-                            + Comprar 
-                        </button>
+                        <div class="animate__animated animate__fadeIn animate__slow">
+                            <div id="wallet_container"></div>
+                        </div>
                     </div>
                 </div>
             </div>

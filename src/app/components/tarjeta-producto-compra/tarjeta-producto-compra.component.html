@@ -16,7 +16,12 @@
             <h3 class="productoCompraNombre"> {{producto.titulo}} </h3>
             <p class="productoCompraDescripcion"> {{producto.descripcion}} </p>
             <p class="productoCompraNombre">{{producto.precio | currency: 'symbol': '$'}}</p>
-            <a role="button" (click)="eliminarCarrito(producto)" class="eliminarCompradoBtn">Eliminar</a>
+            <a role="button" (click)="eliminarCarrito(producto)" class="eliminarCompradoBtn">
+                <span class="centrarIcon">
+                    <span class="material-icons marginIcon">delete</span>
+                    Eliminar
+                </span>
+            </a>
         </div>
     </div>
 </div>

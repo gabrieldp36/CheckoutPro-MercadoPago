@@ -1,3 +1,7 @@
+/*********************************Importaciones**********************************/
+
+@import '~material-icons/iconfont/material-icons.css';
+
 /************************************Globales************************************/
 
 html {
@@ -147,8 +151,8 @@ body {
 /************************************Listado productos************************************/
 
 .divTarjetas {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 20px;
 }
 
 .paddingTarjetas {
@@ -244,4 +248,68 @@ body {
         right: unset;
         width: 100%;
     }
+}
+
+/************************************Footer**********************************/
+
+.footerBG {
+    background: #222222; 
+    height: 100%; 
+    margin-top: 40px; 
+}
+
+.divLogo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 0.7rem;
+}
+  
+.footerLogo {
+    max-width: 260px;
+}
+
+.divNavPills {
+    padding: 20px 0;
+}
+
+.anchorNavPillsFooter {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+}
+
+.anchorNavPillsFooter:visited {
+    color: white;
+}
+
+.anchorNavPillsFooter:hover {
+    color: #69f0ae;
+}
+
+.centrarIcon {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+  
+.marginIcon {
+    margin-right: 10px;
+}
+  
+.marginNombre {
+    margin-right: 30px;
+}
+  
+.derechosReservadosFooter {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none !important;
+    color: white !important;
+    margin: 0;
 }

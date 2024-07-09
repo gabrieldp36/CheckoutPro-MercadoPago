@@ -31,7 +31,10 @@ registerLocaleData(localesAR);
     NgbModule,
     AppRoutingModule,
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'es-AR'}],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'es-AR'},
+    { provide: Window, useValue: window },
+  ],
 
   bootstrap: [AppComponent]
 })

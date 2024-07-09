@@ -27,7 +27,10 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "allowedCommonJsDependencies": ["sweetalert2"]
+            "allowedCommonJsDependencies": [
+              "sweetalert2",
+              "@mercadopago/sdk-js"
+            ]
           },
           "configurations": {
             "production": {
