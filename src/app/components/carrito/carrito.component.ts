@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
+import { filter } from 'rxjs';
 import { Producto } from 'src/app/interfaces/app.interfaces';
 import { CarritoService } from 'src/app/services/carrito-service.service';
 
@@ -9,24 +10,26 @@ import { CarritoService } from 'src/app/services/carrito-service.service';
   templateUrl: './carrito.component.html',
   styleUrls: ['./carrito.component.css']
 })
-export class CarritoComponent {
+export class CarritoComponent implements OnInit {
+
+  @ViewChild('btnCarrito') btnCarrito!: ElementRef<HTMLDivElement>
 
   public productosCarrito: Producto[] = this.carritoService.getCarritoProductos();
   public mostrarAvisoLleno: boolean = true;
-
+ 
   constructor(
     public carritoService: CarritoService,
-    private router: Router
+    public router: Router
   ) {};
 
+  public ngOnInit(): void {
+    this.deshabilitarCarrito();
+  };
 
   public eliminarCarrito(unProducto: Producto ):void {
 
     this.carritoService.removerProducto(unProducto)
     unProducto.stock++;
-    if(this.productosCarrito.length === 0) {
-      this.router.navigate(['']);
-    };
   };
 
   public ocultarAviso(){
@@ -43,5 +46,18 @@ export class CarritoComponent {
 
     this.router.navigate(['/comprar-productos']);
     dropdown.close();
+  };
+
+  public deshabilitarCarrito() {
+
+    this.router.events.pipe(
+      filter( (event: any) => event instanceof NavigationEnd)
+    ).subscribe( (event:any) => {
+      if(event['url'] === '/comprar-productos') {
+        this.btnCarrito.nativeElement.classList.add('hidden');
+      } else {
+        this.btnCarrito.nativeElement.classList.remove('hidden');
+      };
+    });
   };
 }

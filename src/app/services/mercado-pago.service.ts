@@ -8,10 +8,18 @@ import { SwalertService } from './swalert.service';
 })
 export class MercadoPagoService {
 
+  // Propiedades.
+
   private ventana: any;
   private publicKey: string = 'APP_USR-c144f221-2cb3-44e4-bde0-304ea3d7423e';
   private mercadoPago: any;
-
+  private generandoBtnMP: boolean = false;
+ 
+  // Getters.
+  public get getGenerandoBtnMP() : boolean {
+    return this.generandoBtnMP;
+  };
+  
   public constructor(
     public http: HttpClient,
     private window: Window,
@@ -39,13 +47,15 @@ export class MercadoPagoService {
   };
 
   public crearPreferencia(preferencia: any): void {
-    this.http.post('http://localhost:4200/create_preference', preferencia)
+    this.generandoBtnMP = true;
+    this.http.post('http://localhost:8080/api/mercadopago/create-preference', preferencia)
     .subscribe({
       next: (resp: any) => {
         this.crearBotonMercadoPago(resp.id);
       },
       error: (error) => {
         console.log(error);
+        this.generandoBtnMP = false;
         this.swalert.dialogoSimple('error', 'Ha ocurrido un error', 'No se ha podido procesar la orden de pago.');
       },
     });
@@ -57,7 +67,7 @@ export class MercadoPagoService {
   };
 
   private async renderizarBotonMP(bricksBuilder: any, preferenciaId: string) {
-    if( this.ventana.checkoutButton ) this.ventana.checkoutButton?.unmount();
+    this.ventana.checkoutButton?.unmount();
     try {
       await bricksBuilder.create('wallet', 'wallet_container',{
         initialization: {
@@ -70,8 +80,10 @@ export class MercadoPagoService {
           },
         },
       });
+      this.generandoBtnMP = false;
     } catch (error) {
       console.log(error)
+      this.generandoBtnMP = false;
       this.swalert.dialogoSimple('error', 'Servicio inaccesible', 'El servicio de Mercado Pago se encuentra temporalmente inaccesible. Intente nuevamente más tarde.');
     };
   };

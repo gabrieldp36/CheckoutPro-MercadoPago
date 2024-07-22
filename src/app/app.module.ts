@@ -13,6 +13,7 @@ import {registerLocaleData} from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { TarjetaProductoComponent } from './components/tarjeta-producto/tarjeta-producto.component';
 import { TarjetaProductoCompraComponent } from './components/tarjeta-producto-compra/tarjeta-producto-compra.component';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localesAR);
 
@@ -28,6 +29,7 @@ registerLocaleData(localesAR);
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgbModule,
     AppRoutingModule,
   ],

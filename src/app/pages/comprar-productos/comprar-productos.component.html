@@ -4,9 +4,9 @@
 
         <div class="col-lg-7 col-md-12 col-sm-12">
             <div 
-                *ngFor="let producto of listadoProductos"
+                *ngFor="let producto of productosCarrito"
             >
-                <app-tarjeta-producto-compra [producto]="producto"></app-tarjeta-producto-compra>
+                <app-tarjeta-producto-compra [producto]="producto" (deleteEvent)="crearNuevaPreferencia()"></app-tarjeta-producto-compra>
             </div>
         </div>
 
@@ -16,11 +16,21 @@
                     <div class="card-body">
                 
                         <h5 class="card-title" style="font-weight: 700; margin-bottom: 20px;">¡Comprar productos!</h5>
-                        <p class="card-text"><strong>Cantidad:</strong> {{listadoProductos.length}} </p>
+                        <p class="card-text"><strong>Cantidad:</strong> {{productosCarrito.length}} </p>
                         <p class="card-text"> <strong>Precio:</strong> {{carritoService.totalCarrito() | currency: 'symbol': '$'}}</p>
                         <hr>
                         
-                        <div class="animate__animated animate__fadeIn animate__slow">
+                        <div *ngIf="mp.getGenerandoBtnMP" class="text-center">
+                            <div class="spinner-border spinnerBtnMP mt-2" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+
+                        <div 
+                            #divBtnMP 
+                            class="animate__animated animate__fadeIn animate__slow"
+                            [hidden]="mp.getGenerandoBtnMP"
+                        >
                             <div id="wallet_container"></div>
                         </div>
                     </div>

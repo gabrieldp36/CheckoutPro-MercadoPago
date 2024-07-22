@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Producto } from 'src/app/interfaces/app.interfaces';
 import { CarritoService } from 'src/app/services/carrito-service.service';
@@ -11,6 +11,8 @@ import { CarritoService } from 'src/app/services/carrito-service.service';
 export class TarjetaProductoCompraComponent {
 
   @Input() producto!: Producto;
+  @Output() deleteEvent = new EventEmitter();
+
   public listadoProductos: Producto[] = this.carritoService.getCarritoProductos();
 
   constructor(
@@ -19,10 +21,10 @@ export class TarjetaProductoCompraComponent {
   ){};
 
   public eliminarCarrito(unProducto: Producto ):void {
-
     this.carritoService.removerProducto(unProducto)
     unProducto.stock++;
-
+    this.deleteEvent.emit();
+    
     if(this.listadoProductos.length === 0) {
       this.router.navigate(['']);
     };
