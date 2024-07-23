@@ -53,7 +53,7 @@ export class CarritoComponent implements OnInit {
     this.router.events.pipe(
       filter( (event: any) => event instanceof NavigationEnd)
     ).subscribe( (event:any) => {
-      if(event['url'] === '/comprar-productos') {
+      if(event['url'] === '/comprar-productos' || event['url'] === '/resultado-compra') {
         this.btnCarrito.nativeElement.classList.add('hidden');
       } else {
         this.btnCarrito.nativeElement.classList.remove('hidden');

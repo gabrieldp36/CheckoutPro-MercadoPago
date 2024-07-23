@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { loadMercadoPago } from "@mercadopago/sdk-js";
 import { SwalertService } from './swalert.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +49,7 @@ export class MercadoPagoService {
 
   public crearPreferencia(preferencia: any): void {
     this.generandoBtnMP = true;
-    this.http.post('http://localhost:8080/api/mercadopago/create-preference', preferencia)
+    this.http.post(`${environment.baseUrl}/api/mercadopago/create-preference`, preferencia)
     .subscribe({
       next: (resp: any) => {
         this.crearBotonMercadoPago(resp.id);

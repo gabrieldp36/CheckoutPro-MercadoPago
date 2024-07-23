@@ -20,10 +20,6 @@ img {
     display: block;
 }
 
-body {
-    font-family: 'Raleway', sans-serif;
-}
-
 /************************************Scroll Bar************************************/
 
 .hide-scroll {
@@ -69,6 +65,10 @@ body {
 }
 
 /************************************Sweet Alert***************************************/
+
+.swal2-styled.swal2-confirm {
+    box-shadow: none !important;
+}
 
 .swal2-timer-progress-bar {
     background-color: rgba(9,9,121,1) !important;
@@ -258,6 +258,129 @@ body {
         right: unset;
         width: 100%;
     }
+}
+
+/********************************Resultado Compra******************************/
+
+.resultadoGrid {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .resultadoGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: unset;
+        align-items: unset;
+        
+    }
+}
+
+.imagenCompra {
+    width: 24rem;
+    margin: 0 auto;
+}
+
+.imagenCancelaCompra {
+    width: 22rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 992px) { 
+    .imagenCompra {
+        width: 30rem;
+    }
+
+    .imagenCancelaCompra {
+        width: 26rem;
+    }
+}
+
+.h2ResultadoCompraExito {
+    display: inline-block;
+    font-size: 3.6rem;
+    color: #313c4e;
+}
+
+.h2ResultadoCompraExito::after {
+    content: '';
+    background-color: #009ee3;
+    height: 1.4rem;
+    width: calc(100% + 1rem);
+    display: block;
+    margin: -1rem 0 0 0;
+}
+
+.h2ResultadoCompraPendiente {
+    display: inline-block;
+    font-size: 3.6rem;
+    color: #313c4e;
+    text-align: left;
+}
+
+.h2ResultadoCompraPendiente::after {
+    content: '';
+    background-color: #ff790d;
+    height: 1.4rem;
+    width: calc(100% + 1rem);
+    display: block;
+    margin: -1rem 0 0 0;
+}
+
+.h2ResultadoCompraCancelado{
+    display: inline-block;
+    font-size: 3.6rem;
+    color: #313c4e;
+    text-align: left;
+}
+
+.h2ResultadoCompraCancelado::after {
+    content: '';
+    background-color: #D92626;
+    height: 1.4rem;
+    width: calc(100% + 1rem);
+    display: block;
+    margin: -1rem 0 0 0;
+}
+
+.informacionCompra {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    min-height: 24rem;
+}
+
+@media (min-width: 768px) { 
+    .informacionCompra { 
+        justify-content: space-evenly;
+        min-height: 22rem;
+    }
+} 
+
+@media (min-width: 992px) { 
+    .informacionCompra {
+        max-width: unset;
+        min-height: unset;
+    }
+}
+
+.parrafoResultadoCompra {
+    max-width: 28rem;
+    font-size: 1.2rem;
+    color: #313c4e;
+    text-align: center;
+}
+
+.btnContinuarComprando {
+    width: 60%;
+    border-radius: 20px !important;
+    margin-bottom: 8px;
 }
 
 /************************************Footer**********************************/

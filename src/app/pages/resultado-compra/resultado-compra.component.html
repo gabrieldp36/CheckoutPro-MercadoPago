@@ -1,0 +1,72 @@
+<div class="container animate__animated animate__fadeIn">
+    <div class="resultadoGrid">
+        <div class="imagenCompra">
+            <img 
+                *ngIf="resutado === 'exitoso'
+                " src="../../../assets/compra-exitosa.png" alt="Imagen compra exitosa"
+            >
+            <img
+                *ngIf="resutado === 'pendiente'"
+                src="../../../assets/pago-pendiente.svg" 
+                alt="Imagen pago pendiente"
+            >
+            <img
+                *ngIf="resutado === 'cancelado'"
+                class="imagenCancelaCompra pb-4"
+                src="../../../assets/pago-cancelado.png" 
+                alt="Imagen pago pendiente"
+            >
+        </div>
+        
+        <div class="informacionCompra">
+            <h2 
+                *ngIf="resutado === 'exitoso'"   
+                class="h2ResultadoCompraExito"
+            >
+                Compra aprobada
+            </h2>
+            <h2
+                *ngIf="resutado === 'pendiente'"   
+                class="h2ResultadoCompraPendiente"
+            >
+                Compra pendiente
+            </h2>
+            <h2
+                *ngIf="resutado === 'cancelado'"   
+                class="h2ResultadoCompraCancelado"
+            >
+                Compra cancelada
+            </h2>
+            <p 
+                *ngIf="resutado === 'exitoso'" 
+                class="parrafoResultadoCompra"
+            >
+                Tu pago fue correctamente procesado. 
+                Estamos preparando tu pedido, te enviaremos un correo cuando esté listo.
+            </p>
+            <p
+                *ngIf="resutado === 'pendiente'" 
+                class="parrafoResultadoCompra"
+            >
+                Tu pago se encuentra en proceso de aprobación. 
+                Te enviaremos un correo cuando esté aprobado.
+            </p>
+            <p
+                *ngIf="resutado === 'cancelado'" 
+                class="parrafoResultadoCompra"
+            >
+                Tu compra fue cancelada. 
+                Te invitamos a que continúes comprando en nuestra tienda.
+            </p>
+            <button 
+                class="btn btn-primary btnContinuarComprando" 
+                [routerLink]="''"
+            > 
+                <span class="centrarIcon">
+                    <span class="material-icons marginIcon">local_mall</span>
+                    Continuar comprando
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
