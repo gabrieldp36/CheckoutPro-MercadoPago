@@ -1,6 +1,6 @@
 {
-  "name": "carrito",
-  "version": "0.0.0",
+  "name": "checkout-pro-app",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
