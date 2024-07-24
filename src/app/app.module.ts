@@ -17,7 +17,7 @@ import { TarjetaProductoCompraComponent } from './components/tarjeta-producto-co
 
 // Cambiar el locale de la app.
 import localesAR from '@angular/common/locales/es-AR';
-import {registerLocaleData} from '@angular/common';
+import {HashLocationStrategy, LocationStrategy, registerLocaleData} from '@angular/common';
 
 registerLocaleData(localesAR);
 
@@ -39,6 +39,7 @@ registerLocaleData(localesAR);
     NgbModule,
   ],
   providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: LOCALE_ID, useValue: 'es-AR' },
     { provide: Window, useValue: window },
   ],
