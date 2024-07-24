@@ -20,10 +20,24 @@
             
         </div>
 
+        
         <div  
             ngbDropdownMenu 
             aria-labelledby="dropdownBasic1"
         >
+            <div
+                *ngIf="carritoService.getCarritoProductos().length === 0"
+            >
+                <div class="divBtnRemove">
+                    <button
+                        class="btnRemove opacity-hover-8"
+                        (click)="myDrop.close()"
+                    ></button>
+                </div>
+                <img class="imagenCarritoVacio" src="../../../assets/carrito-vacio.svg" alt="Carrito vacío">
+                <h3 class="text-center mt-3">Carrito vacío</h3>
+                <p class="text-center mt-3 textoCarritoVacio">🎁 ¡Agregá productos! 😄</p>
+            </div>
             
             <div
                 *ngFor="let producto of productosCarrito"
@@ -46,12 +60,13 @@
 
             </div>
             
-            <div class="divBtnComprar">
-
+            <div 
+                *ngIf="productosCarrito.length > 0" 
+                class="divBtnComprar"
+            >
                 <p><strong>Total: {{carritoService.totalCarrito() | currency: 'symbol': '$'}}</strong></p>
 
                 <button
-                    *ngIf="productosCarrito.length > 0"
                     class="btn btn-outline-success btnComprarCarrito btn-sm" 
                     (click)="comprarProductos(myDrop)"
                 > 
