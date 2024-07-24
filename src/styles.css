@@ -60,6 +60,10 @@ img {
     display: none !important;
 }
 
+.min-height-450 {
+    min-height: 450px;
+}
+
 .opacity-hover-8:hover {
     opacity: .8 !important;
 }
