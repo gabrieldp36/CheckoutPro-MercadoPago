@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import { Producto } from 'src/app/interfaces/app.interfaces';
 import { CarritoService } from 'src/app/services/carrito-service.service';
 import { SwalertService } from 'src/app/services/swalert.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tarjeta-producto',

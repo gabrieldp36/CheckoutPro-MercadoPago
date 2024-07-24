@@ -21,7 +21,6 @@
         </div>
 
         <div  
-            [class]="(productosCarrito.length == 0) ? 'ocultar' : ''"
             ngbDropdownMenu 
             aria-labelledby="dropdownBasic1"
         >
@@ -32,7 +31,7 @@
                 <div class="divBtnRemove">
                     <button
                         class="btnRemove opacity-hover-8"
-                        (click)="eliminarCarrito(producto)"
+                        (click)="eliminarCarrito(producto, myDrop)"
                     ></button>
                 </div>
 

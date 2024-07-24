@@ -26,10 +26,11 @@ export class CarritoComponent implements OnInit {
     this.deshabilitarCarrito();
   };
 
-  public eliminarCarrito(unProducto: Producto ):void {
+  public eliminarCarrito(unProducto: Producto, dropdown: NgbDropdown):void {
 
     this.carritoService.removerProducto(unProducto)
     unProducto.stock++;
+   (this.carritoService.getCarritoProductos().length === 0) ? dropdown.close() : '';
   };
 
   public ocultarAviso(){
