@@ -80,21 +80,43 @@ img {
 
 /************************************NavBar + Carrito***********************************/
 
+.imgLogo {
+    width: 10rem;
+    margin: 0 auto;
+}
+
 .navBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
-    height: 100px;
     color: white;
-    padding: 0 30px;
+    padding: 30px 20px;
     box-shadow: 15px 5px 5px #48529944;
     background: rgb(0,212,255);
     background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 35%, rgba(2,0,36,1) 100%);
 }
 
-.divBtnCarrito {
-    padding-right: 80px;
+.navBarGrid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.contenidoNavBar {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: left;
+}
+
+.h1NavBar {
+    text-align: end;
+}
+
+@media (min-width: 619px) {
+
+    .contenidoNavBar {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 }
 
 .divButton {
@@ -113,13 +135,16 @@ img {
     border: 0;
     color: transparent;
     cursor: pointer;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-property: transform;
 }
 
 .btnCarrito:hover {
-    transform: scale(1.3);
     background-image: url(./assets/btnCarritoHoverGreen.svg);
-    transition-delay: 0.18s;
+    transform: scale(1.3);
     transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
     margin-top: 10px;
 }
 
@@ -290,8 +315,7 @@ img {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         justify-content: unset;
-        align-items: unset;
-        
+        align-items: unset;  
     }
 }
 
