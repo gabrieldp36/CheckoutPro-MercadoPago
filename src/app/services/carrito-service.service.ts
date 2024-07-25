@@ -12,48 +12,48 @@ export class CarritoService {
   private _listadoProductos: Producto[] = [
 
     {
-      id: 1,
+      id: 1111,
       imagenUrl: "https://http2.mlstatic.com/D_NQ_NP_2X_836230-MLA47745324960_102021-F.webp",
       titulo: "Yamaha Custom Z Ytr-8310zs",
       descripcion: "Trompeta profesional diseñada especialmente para músicos de jazz.",
-      precio: 100,
+      precio: 1800000,
       stock: 2
     },
 
     
     {
-      id: 2,
+      id: 2222,
       imagenUrl: "https://http2.mlstatic.com/D_NQ_NP_2X_733768-MLA45822475776_052021-F.webp",
       titulo: "Vincent Bach Tr200 Si-b",
       descripcion: "Instrumento ideal para estudiantes principiantes.",
-      precio: 100,
+      precio: 500000,
       stock: 8
     },
 
     {
-      id: 3,
+      id: 3333,
       imagenUrl: "https://http2.mlstatic.com/D_NQ_NP_2X_659183-MLA43346543240_092020-F.webp",
       titulo: "Vincent Bach Stradivarius Mod 43",
       descripcion: "Trompeta Stradivarius modelo 43 campana ultra liviana.",
-      precio: 100,
+      precio: 1700000,
       stock: 1
     },
 
     {
-      id: 4,
+      id: 4444,
       imagenUrl: "https://http2.mlstatic.com/D_NQ_NP_2X_627746-MLA31193071789_062019-F.webp",
       titulo: "Getzen Eterna 900dlx",
       descripcion: "Diseñado para los profesionales que desean un instrumento con tonos maravillosamente ricos y brillantes",
-      precio: 100,
+      precio: 1200000,
       stock: 3
     },
 
     {
-      id: 5,
+      id: 5555,
       imagenUrl: "https://http2.mlstatic.com/D_NQ_NP_2X_859424-MLA48952141431_012022-F.webp",
       titulo: "Vincent Bach Stradivarius 37",
       descripcion: "Trompeta vincent bach stradivarius 190s37 50th aniversario, año 2015 , estuche original.",
-      precio: 100,
+      precio: 1500000,
       stock: 1
     },
   ];

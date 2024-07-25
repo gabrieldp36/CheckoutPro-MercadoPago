@@ -37,6 +37,7 @@ export class ComprarProductosComponent {
     if(this.productosCarrito.length > 0) {
       let preferencia = structuredClone(this.productosCarrito).map( p => {
         return {
+          id: p.id,
           title: p.titulo,
           unit_price: p.precio,
           picture_url: p.imagenUrl,
