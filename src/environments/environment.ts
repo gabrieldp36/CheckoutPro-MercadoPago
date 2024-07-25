@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseUrl:`http://localhost:8080`,
-  publicKeyMP: 'APP_USR-c144f221-2cb3-44e4-bde0-304ea3d7423e',
+  publicKeyMP: 'APP_USR-7ffd105c-a13d-4988-b93e-8321bb5331b7',
 };
 
 /*
