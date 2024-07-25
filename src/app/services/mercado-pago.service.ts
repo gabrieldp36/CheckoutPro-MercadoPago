@@ -12,7 +12,7 @@ export class MercadoPagoService {
   // Propiedades.
 
   private ventana: any;
-  private publicKey: string = 'APP_USR-c144f221-2cb3-44e4-bde0-304ea3d7423e';
+  private publicKey: string = environment.publicKeyMP;
   private mercadoPago: any;
   private generandoBtnMP: boolean = false;
  
