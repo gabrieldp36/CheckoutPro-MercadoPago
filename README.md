@@ -10,7 +10,6 @@ Pueden visitar la App haciendo click en este link: https://servidor-mp-checkoutp
 
 Para realizar pagos, deben preciosar el boton "Pagar con Mercado Pago" y luego loguearse con la siguiente cuenta de prueba:
 
-**Usuario comprador**
 ```
 User: TESTUSER1530198206
 Pass: FhrCRziNI2
@@ -32,7 +31,7 @@ Código de seguridad: 123
 Fecha de expiración: 11/25
 ```
 
-Este proyecto fue generado con [Angular CLI] versión 15.2.10
+Este proyecto fue generado con [Angular CLI] versión 15.2.10.
 
 Recuerden reconstruir los módulos de Node:
 
