@@ -60,8 +60,8 @@ img {
     display: none !important;
 }
 
-.min-height-450 {
-    min-height: 450px;
+.min-height-500 {
+    min-height: 500px;
 }
 
 .opacity-hover-8:hover {
@@ -70,6 +70,16 @@ img {
 
 .center {
     margin: 0 auto;
+}
+
+.overflow-visible {
+    overflow: visible;
+}
+
+.displayFlexCenter {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
 }
 
 /************************************Sweet Alert***************************************/

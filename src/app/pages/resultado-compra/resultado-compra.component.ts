@@ -34,14 +34,19 @@ export class ResultadoCompraComponent implements OnInit {
         this.router.navigate([], {queryParams:null});
       } else {
         if(this.redireccionar) {
-          this.router.navigate(['']);
+          //this.router.navigate(['']);
+          this.redireccionar = false;
+          this.actualizandoPago = true;
+          this.swalert.crearLoading('¡Actualizando pago!');
+          this.determinarResultado(queryParams);
         };
       };
     });
   };
 
   public determinarResultado(queryParams: Params): void {
-    const estadoPago: string = queryParams['status'];
+    //const estadoPago: string = queryParams['status'];
+    const estadoPago: string = 'approved';
     switch (estadoPago) {
       case 'approved':
         this.resutado = 'exitoso'
