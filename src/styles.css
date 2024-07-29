@@ -68,6 +68,10 @@ img {
     opacity: .8 !important;
 }
 
+.center {
+    margin: 0 auto;
+}
+
 /************************************Sweet Alert***************************************/
 
 .swal2-styled.swal2-confirm {
@@ -209,10 +213,27 @@ img {
 }
 
 .divImgCard {
-    padding: 0 10px;
+    padding: 0 0px;
 }
 
-.imgCard {
+.imgCardSpinner {
+    height: 260px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.imgCardProducto {
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    height: 240px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.imgCardCarrito {
     height: 120px; 
     background-size: contain; 
     background-repeat: no-repeat; 
@@ -276,9 +297,9 @@ img {
 }
 
 .divBtnMercadoPago {
-    position: fixed;
+    position: sticky;
     width: 20rem;
-    right: 8%
+    top: 5rem;
 }
 
 .eliminarCompradoBtn {

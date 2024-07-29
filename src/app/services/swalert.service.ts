@@ -37,4 +37,20 @@ export class SwalertService {
       title: title
     });
   };
+
+  public crearLoading (texto: string): void {
+    Swal.fire({
+      title: texto,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+    });
+  };
+
+  public cerrarAlert(): void {
+    Swal.close();
+  };
 }

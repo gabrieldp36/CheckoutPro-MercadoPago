@@ -1,20 +1,26 @@
-<div class="container animate__animated animate__fadeIn min-height-450">
-    <div class="resultadoGrid">
+<div class="min-height-450">
+    <div 
+        [hidden]="actualizandoPago"
+        class="resultadoGrid container animate__animated animate__fadeIn"
+    >
         <div class="imagenCompra">
             <img 
                 *ngIf="resutado === 'exitoso'
                 " src="../../../assets/compra-exitosa.png" alt="Imagen compra exitosa"
+                (load)="onLoadImg()"
             >
             <img
                 *ngIf="resutado === 'pendiente'"
                 src="../../../assets/pago-pendiente.svg" 
                 alt="Imagen pago pendiente"
+                (load)="onLoadImg()"
             >
             <img
                 *ngIf="resutado === 'cancelado'"
                 class="imagenCancelaCompra pb-4"
                 src="../../../assets/pago-cancelado.png" 
                 alt="Imagen pago pendiente"
+                (load)="onLoadImg()"
             >
         </div>
         

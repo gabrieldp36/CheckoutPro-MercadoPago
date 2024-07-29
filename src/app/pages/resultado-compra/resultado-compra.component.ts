@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { SwalertService } from 'src/app/services/swalert.service';
 
 @Component({
   selector: 'app-resultado-compra',
@@ -9,11 +10,13 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class ResultadoCompraComponent implements OnInit {
 
   public resutado: string = '';
+  public actualizandoPago: boolean = false;
   public redireccionar: boolean = true;
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    private swalert: SwalertService
   ){};
 
   public ngOnInit(): void {
@@ -24,6 +27,8 @@ export class ResultadoCompraComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe( (queryParams) => {
       if(Object.keys(queryParams).length > 0) {
         this.redireccionar = false;
+        this.actualizandoPago = true;
+        this.swalert.crearLoading('¡Actualizando pago!');
         this.determinarResultado(queryParams);
         console.log(queryParams);
         this.router.navigate([], {queryParams:null});
@@ -51,5 +56,12 @@ export class ResultadoCompraComponent implements OnInit {
         this.resutado = 'cancelado'
         break;
     };
+  };
+
+  public onLoadImg(): void {
+    setTimeout(() => {
+      this.actualizandoPago = false;
+      this.swalert.cerrarAlert();
+    }, 800);
   };
 }

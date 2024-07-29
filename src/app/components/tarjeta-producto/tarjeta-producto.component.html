@@ -1,15 +1,18 @@
 <div class="card tarjeta">
     <div class="divImgCard">
+
+        <div *ngIf="imgLoad" class="imgCardSpinner">
+            <div class="spinner-border spinnerBtnMP mt-2" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
         <div
-            class="card-img-top"
-            style="background-image: url({{producto.imagenUrl}}); 
-            background-size: contain; 
-            background-repeat: no-repeat; 
-            height: 240px; background-position: center;
-            box-sizing: border-box;
-            margin-top: 10px;
-            margin-bottom: 10px;"
+            [hidden]="imgLoad"
+            class="card-img-top imgCardProducto animate__animated animate__fadeIn"
+            style="background-image: url({{producto.imagenUrl}});"
         ></div>
+        
     </div>
 
 
@@ -30,14 +33,6 @@
                 Agregar al carrito 
             </span>
         </button>
-
-        <!-- <button
-            *ngIf="mostrarBtnEliminar(producto)"
-            class="btn btn-outline-danger btnAgregarCarrito btn-sm" 
-            (click)="eliminarCarrito(producto)"
-        > 
-            - Eliminar del carrito 
-        </button> -->
 
     </div>
 
