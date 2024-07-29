@@ -1,27 +1,53 @@
-# Carrito
+# Checkout Pro - Mercado Pago.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+Esta aplicación ha sido elaborada para rendir el examén que permite obtener la certificación que ofrece Mercado Libre para la integración "Checkout Pro".
 
-## Development server
+La misma fue construida siguiendo los lineamientos que peticiona Mercado Libre, incluyendo un listado y un carrito a través del cual se pueden comprar productos, pudiendo abonar los mismos a través de la plataforma Mercado Pago.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Pueden visitar la App haciendo click en este link: https://servidor-mp-checkoutpro.onrender.com
 
-## Code scaffolding
+### Notas:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para realizar pagos, deben preciosar el boton "Pagar con Mercado Pago" y luego loguearse con la siguiente cuenta de prueba:
 
-## Build
+**Usuario comprador**
+```
+User: TESTUSER1530198206
+Pass: FhrCRziNI2
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Luego pueden usar estas tarjetas de crédito que sirven para realizar pagos de prueba:
 
-## Running unit tests
+**Mastercard**
+```
+Número: 5031 7557 3453 0604
+Código de seguridad: 123
+Fecha de expiración: 11/25
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**American Express**
+```
+Número: 5031 7557 3453 0604
+Código de seguridad: 123
+Fecha de expiración: 11/25
+```
 
-## Running end-to-end tests
+Este proyecto fue generado con [Angular CLI] versión 15.2.10
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Recuerden reconstruir los módulos de Node:
 
-## Further help
+```
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Y luego, para probar la app en desarrollo, deben levantar el servidor [https://github.com/gabrieldp36/Servidor-MP-CheckoutPro] y ejecutar el siguiente comando:
+
+```
+ng serve -o
+```
+
+Para construir el build, recuerden:
+
+```
+ng build --configuration=production
+```
