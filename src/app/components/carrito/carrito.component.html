@@ -4,19 +4,18 @@
         <div 
             #btnCarrito
             class="divButton animate__animated animate__fadeIn animate__slow"
-        >
+            >
             <button 
                 class="btnCarrito" 
                 id="dropdownBasic1"
-                (mouseover)="ocultarAviso()"
-                (mouseleave)="mostrarAviso()"
                 ngbDropdownToggle
-            ></button>
-
-            <img 
-                *ngIf="productosCarrito.length > 0 && mostrarAvisoLleno"
-                src="../../../assets/Ellipse 6.svg" alt=""
             >
+                <img 
+                    class="carritoLleno"
+                    *ngIf="productosCarrito.length > 0"
+                    src="../../../assets/Ellipse 6.svg" alt=""
+                >
+            </button>
             
         </div>
 
