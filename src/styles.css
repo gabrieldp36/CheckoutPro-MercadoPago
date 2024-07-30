@@ -121,6 +121,10 @@ img {
     grid-template-columns: 1fr 3fr;
 }
 
+.divImgLogo {
+    min-height: unset;
+}
+
 .contenidoNavBar {
     display: flex; 
     flex-direction: column;
@@ -136,6 +140,10 @@ img {
     
     .navBar {
       min-height: 175.94px;
+    }
+
+    .divImgLogo {
+        min-height: 115.94px;
     }
 
     .contenidoNavBar {
