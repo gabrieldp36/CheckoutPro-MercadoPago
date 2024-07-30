@@ -1,5 +1,6 @@
 /*********************************Importaciones**********************************/
 
+@import '~animate.css/animate.min.css';
 @import '~material-icons/iconfont/material-icons.css';
 
 /************************************Globales************************************/
@@ -80,6 +81,13 @@ img {
     display: flex; 
     justify-content: center; 
     align-items: center;
+}
+
+/*********************************** Animaciones *****************************************/
+
+[class*="animated"] {
+    -webkit-animation-fill-mode: initial !important;
+    animation-fill-mode: initial !important;
 }
 
 /************************************Sweet Alert***************************************/
@@ -230,7 +238,7 @@ img {
 }
 
 .divImgCard {
-    padding: 0 0px;
+    padding: 0 10px;
 }
 
 .imgCardSpinner {

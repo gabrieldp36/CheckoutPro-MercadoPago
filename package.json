@@ -21,6 +21,7 @@
     "@mercadopago/sdk-js": "^0.0.3",
     "@ng-bootstrap/ng-bootstrap": "14.2.0",
     "@popperjs/core": "^2.10.2",
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.2.0",
     "material-icons": "^1.13.12",
     "rxjs": "~7.5.0",
