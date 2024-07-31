@@ -10,14 +10,14 @@
             </div>
         </div>
 
-        <div class="col-lg-5 col-md-8 col-sm-12">
+        <div class="col-lg-5 col-md-8 col-sm-12 flex-1">
             <div class="divBtnMercadoPago center">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body text-center">
                 
                         <h5 class="card-title" style="font-weight: 700; margin-bottom: 20px;">¡Comprar productos!</h5>
-                        <p class="card-text"><strong>Cantidad:</strong> {{productosCarrito.length}} </p>
                         <p class="card-text"> <strong>Precio:</strong> {{carritoService.totalCarrito() | currency: 'symbol': '$'}}</p>
+                        <p class="card-text"><strong>Cantidad:</strong> {{productosCarrito.length}} </p>
                         <hr>
                         
                         <div *ngIf="mp.getGenerandoBtnMP" class="text-center">

@@ -77,6 +77,10 @@ img {
     overflow: visible;
 }
 
+.flex-1 {
+    flex: 1;
+}
+
 .displayFlexCenter {
     display: flex; 
     justify-content: center; 
@@ -335,8 +339,7 @@ img {
 
 .divBtnMercadoPago {
     position: sticky;
-    width: 20rem;
-    top: 5rem;
+    width: 100%;
 }
 
 .eliminarCompradoBtn {
@@ -350,11 +353,16 @@ img {
     opacity: .8;
 }
 
-@media (max-width: 991px) {
+@media (min-width: 768px) {
     .divBtnMercadoPago {
-        position: unset;
-        right: unset;
-        width: 100%;
+        width: 80%;
+        top: 5rem;
+    }
+}
+
+@media (min-width: 991px) {
+    .divBtnMercadoPago {
+        width: 20rem;
     }
 }
 
